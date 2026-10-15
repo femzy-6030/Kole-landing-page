@@ -133,12 +133,12 @@
                         <a href="#stats" class="hover:text-kole-green transition-colors">Pilot Stats</a>
                     </nav>
 
-                    <!-- Desktop CTA Button -->
-                    <div class="hidden md:flex items-center gap-4 shrink-0">
-                        <button onclick="openSurvey(event, 'resident')"
-                            class="bg-kole-green hover:bg-[#0c633e] text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-kole-green/20 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer">
-                            Take Survey <span class="hidden lg:inline">→</span>
-                        </button>
+                    <!-- Desktop CTA Buttons -->
+                    <div class="hidden md:flex items-center gap-3 shrink-0">
+                        <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer"
+                            class="bg-emerald-800 hover:bg-emerald-900 text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all">
+                            Launch Web App →
+                        </a>
                     </div>
 
                     <!-- Mobile Hamburger Toggle Button -->
@@ -177,7 +177,7 @@
                     <div class="pt-2 px-2">
                         <button onclick="openSurvey(event, 'resident'); toggleMobileMenu();"
                             class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
-                            <span>Take Survey</span>
+                            <span>Launch App</span>
                             <span>→</span>
                         </button>
                     </div>
@@ -223,42 +223,44 @@
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 
-                        <!-- Primary Hero CTA -->
-                        <button type="button" onclick="openSurvey(event, 'resident')"
-                            class="w-full sm:w-auto bg-white hover:bg-slate-100 text-kole-green px-8 py-3.5 sm:py-4 rounded-xl font-black text-sm sm:text-base shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer">
-                            <span>Get Early Access</span>
-                            <svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </button>
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 
-                        <!-- Secondary Hero CTA -->
-                        <button type="button" onclick="openSurvey(event, 'collector')"
-                            class="w-full sm:w-auto bg-transparent hover:bg-white/10 border-2 border-white/30 hover:border-white/60 text-white px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer">
-                            <span>Join as a Collector</span>
-                        </button>
+                            <!-- Direct Web App Hero CTA -->
+                            <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer"
+                                class="w-full sm:w-auto bg-emerald-800 hover:bg-emerald-900 text-white px-8 py-3.5 sm:py-4 rounded-xl font-black text-sm sm:text-base shadow-xl transition-all duration-200 hover:scale-[1.02] flex items-center justify-center gap-2">
+                                <span>Open Web App (app.kole.ng)</span>
+                                <svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                            <!-- Secondary Hero CTA -->
+                            <button type="button" onclick="openSurvey(event, 'collector')"
+                                class="w-full sm:w-auto bg-transparent hover:bg-white/10 border-2 border-white/30 hover:border-white/60 text-white px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer">
+                                <span>Join as a Collector</span>
+                            </button>
 
-                    </div> <!-- Trust indicators -->
-                    <div
-                        class="mt-12 pt-8 border-t border-white/20 flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-80">
-                        <div class="flex items-center gap-2 text-white font-semibold text-sm">
-                            <span
-                                class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
-                            Fast Dispatch
+                        </div> <!-- Trust indicators -->
+                        <div
+                            class="mt-12 pt-8 border-t border-white/20 flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-80">
+                            <div class="flex items-center gap-2 text-white font-semibold text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
+                                Fast Dispatch
+                            </div>
+                            <div class="flex items-center gap-2 text-white font-semibold text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
+                                Verified Routes
+                            </div>
+                            <div class="flex items-center gap-2 text-white font-semibold text-sm">
+                                <span
+                                    class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
+                                Specific Pricing
+                            </div>
                         </div>
-                        <div class="flex items-center gap-2 text-white font-semibold text-sm">
-                            <span
-                                class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
-                            Verified Routes
-                        </div>
-                        <div class="flex items-center gap-2 text-white font-semibold text-sm">
-                            <span
-                                class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
-                            Specific Pricing
-                        </div>
+
                     </div>
-
-                </div>
             </section>
             <!-- PROBLEM VS SOLUTION SECTION (Milestone 8) -->
             <!-- PROBLEM VS SOLUTION SECTION -->
@@ -479,13 +481,12 @@
                                     </ul>
                                 </div>
                             </div>
-
-                            <div class="px-6 pb-6 sm:px-8 sm:pb-8">
-                                <button onclick="openSurvey(event, 'resident')"
-                                    class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
-                                    <span>Switch To On-Demand Clearance</span>
+                            <div class="px-6 pb-6 sm:px-8 sm:pb-8 space-y-3">
+                                <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer"
+                                    class="w-full bg-emerald-800 hover:bg-emerald-900 text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 text-center">
+                                    <span>Launch KóLẹ̀ Web App</span>
                                     <span>→</span>
-                                </button>
+                                    </button>
                             </div>
                         </div>
 
@@ -718,118 +719,154 @@
 
                 </div>
             </section>
-            <!-- FINAL CTA SECTION (Milestone 9) -->
-        </main>
+            <!-- FOOTER WITH PROMINENT CTA BANNER INSIDE MAIN -->
+            <footer class="bg-kole-dark text-gray-400 pt-16 pb-12 border-t border-slate-800 relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- FOOTER WILL GO HERE (Milestone 9) -->
-        <!-- FINAL CALL TO ACTION BANNER -->
-        <section class="relative py-20 md:py-28 overflow-hidden text-white text-center">
-
-            <!-- 1. Background Image -->
-            <div class="absolute inset-0 z-0">
-                <img src="Community.png" alt="Osogbo Clean Neighborhood" class="w-full h-full object-cover" />
-            </div>
-
-            <!-- 2. Dark Green Gradient & Blur Overlay -->
-            <div
-                class="absolute inset-0 z-0 bg-gradient-to-br from-kole-green/40 via-[#0a5c3a]/40 to-kole-dark/40 backdrop-blur-sm mix-blend-multiply">
-            </div>
-
-            <!-- 3. Banner Content -->
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
-
-                <span
-                    class="inline-block bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full text-emerald-100">
-                    Shape Osogbo's Clean Future
-                </span>
-
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-white">
-                    Ready for a Cleaner, Smell-Free Neighborhood?
-                </h2>
-
-                <p class="text-base sm:text-lg text-emerald-50 max-w-2xl mx-auto font-normal leading-relaxed">
-                    Take our quick 2-minute survey to help us map demand in your area and claim early-bird access when
-                    we launch near you.
-                </p>
-
-                <div class="pt-4">
-                    <button onclick="openSurvey(event)"
-                        class="bg-white hover:bg-slate-100 text-kole-dark font-black px-8 py-4 rounded-xl text-base shadow-xl transition-all hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2">
-                        <span>Tell Us What to Build</span>
-                        <span>→</span>
-                    </button>
-                </div>
-
-                <p class="text-xs text-emerald-200/80 pt-2">
-                    🔒 Your feedback remains confidential and directly guides our rollout.
-                </p>
-
-            </div>
-        </section>
-        <!-- FOOTER -->
-        <footer class="bg-kole-dark text-gray-400 pt-16 pb-8 border-t border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <!-- Main Footer Columns -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
-
-                    <!-- Column 1: Brand Info -->
-                    <div class="space-y-4">
-                        <div class="inline-block bg-white px-3 py-1.5 rounded-xl shadow-sm">
-                            <img src="Kole premium 2.png" alt="KóLẹ̀ Logo"
-                                class="h-10 w-auto object-contain mix-blend-multiply"
-                                style="filter: brightness(1.1) contrast(1.2);">
+                    <!-- PROMINENT CTA BANNER CARD -->
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl mb-16 bg-gradient-to-br from-kole-green via-[#0c633e] to-emerald-800 border border-emerald-500/30 text-white">
+                        <!-- Community Background Image with Gradient Overlay -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="Community.png" alt="Clean Osogbo Neighborhood" class="w-full h-full object-cover mix-blend-overlay opacity-30" onerror="this.style.display='none';">
                         </div>
-                        <p class="text-xs text-gray-400 leading-relaxed">
-                            Connecting waste carriers and homes across Osogbo for fast, reliable, and hygienic on-demand
-                            waste management.
-                        </p>
-                    </div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-kole-green/90 via-[#0a5c3a]/85 to-emerald-950/90 z-0"></div>
 
-                    <!-- Column 2: Contact & Direct Support -->
-                    <div class="space-y-3">
-                        <h4 class="text-sm font-bold text-white uppercase tracking-wider">Contact Us</h4>
-                        <ul class="space-y-2.5 text-xs font-medium text-gray-400">
-                            <li class="flex items-center gap-2">
-                                <span>📍</span> <span>Osogbo, Osun State, Nigeria</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span>📱</span> <a href="https://wa.me/2349014603028" target="_blank"
-                                    class="hover:text-emerald-400 transition-colors">+234 (0) WhatsApp Support</a>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span>✉️</span>
-                                <a href="mailto:koleofficial9@gmail.com"
-                                    class="hover:text-emerald-400 transition-colors">
-                                    koleofficial9@gmail.com
+                        <!-- Banner Card Content -->
+                        <div class="relative z-10 px-6 py-14 sm:px-12 sm:py-16 md:py-20 text-center max-w-4xl mx-auto space-y-6">
+                            <span class="inline-block bg-white/15 border border-white/20 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full text-emerald-100">
+                                Shape Osogbo's Clean Future
+                            </span>
+
+                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-white">
+                                Ready to Clear Your Waste Without the Stress?
+                            </h2>
+
+                            <p class="text-base sm:text-lg text-emerald-50 max-w-2xl mx-auto font-normal leading-relaxed">
+                                Connect directly with verified local waste carriers and truck operators in Osogbo. On-demand doorstep pickup with transparent flat pricing.
+                            </p>
+
+                            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer"
+                                    class="w-full sm:w-auto bg-white hover:bg-slate-100 text-kole-dark font-black px-8 py-4 rounded-xl text-base shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center justify-center gap-2">
+                                    <span>Launch Web App (app.kole.ng)</span>
+                                    <span>→</span>
                                 </a>
-                            </li>
-                        </ul>
+                                <button type="button" onclick="openSurvey(event, 'collector')"
+                                    class="w-full sm:w-auto bg-transparent hover:bg-white/10 border-2 border-white/40 hover:border-white text-white px-8 py-4 rounded-xl font-bold text-base transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center justify-center gap-2 cursor-pointer">
+                                    <span>Register as Collector</span>
+                                </button>
+                            </div>
+
+                            <p class="text-xs text-emerald-200/90 pt-2">
+                                🌿 Active pilot coverage across Alekuwodo, Oke-Fia, Oja-Oba, Dada Estate & Osogbo Central.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Column 3: Social Media Icons -->
-                    <!-- FOOTER SOCIAL LINKS -->
-                    <div class="flex items-center gap-3">
+                    <!-- 4-COLUMN FOOTER GRID -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
 
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/koleoffical_page?stkn=MTV6ZTRrNnMycWRjbw==" target="_blank"
-                            rel="noopener noreferrer" aria-label="Instagram"
-                            class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-kole-green text-gray-300 hover:text-white flex items-center justify-center transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                        </a>
+                        <!-- Column 1: Brand Info -->
+                        <div class="space-y-4">
+                            <div class="inline-block bg-white px-3 py-1.5 rounded-xl shadow-sm">
+                                <img src="Kole premium 2.png" alt="KóLẹ̀ Logo"
+                                    class="h-10 w-auto object-contain mix-blend-multiply"
+                                    style="filter: brightness(1.1) contrast(1.2);"
+                                    onerror="this.onerror=null; this.src='Kole.png';">
+                            </div>
+                            <p class="text-xs text-gray-400 leading-relaxed">
+                                Connecting waste carriers and homes across Osogbo for fast, reliable, and hygienic on-demand waste management.
+                            </p>
+                            <span class="inline-block text-[11px] font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-1 rounded-md">
+                                Osogbo Pilot Operations
+                            </span>
+                        </div>
 
-                        <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/company/k%C3%B3l%C3%A8official/" target="_blank"
-                            rel="noopener noreferrer" aria-label="LinkedIn"
-                            class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-kole-green text-gray-300 hover:text-white flex items-center justify-center transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.262-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                            </svg>
-                        </a>
+                        <!-- Column 2: Web App & Quick Links -->
+                        <div class="space-y-3">
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Web App Portal</h4>
+                            <ul class="space-y-2.5 text-xs font-medium text-gray-400">
+                                <li>
+                                    <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer"
+                                        class="text-emerald-400 font-bold hover:text-emerald-300 flex items-center gap-1.5 transition-colors">
+                                        <span>Open Web App (app.kole.ng)</span>
+                                        <span>➔</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a>
+                                </li>
+                                <li>
+                                    <a href="#problem-solution" class="hover:text-white transition-colors">Why KóLẹ̀</a>
+                                </li>
+                                <li>
+                                    <a href="#benefits" class="hover:text-white transition-colors">Households & Businesses</a>
+                                </li>
+                                <li>
+                                    <a href="#benefits" class="hover:text-white transition-colors">Carrier & Fleet Operators</a>
+                                </li>
+                                <li>
+                                    <a href="#stats" class="hover:text-white transition-colors">Pilot Readiness Stats</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3: Contact & Direct Support -->
+                        <div class="space-y-3">
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Osogbo Support</h4>
+                            <ul class="space-y-2.5 text-xs font-medium text-gray-400">
+                                <li class="flex items-start gap-2">
+                                    <span>📍</span>
+                                    <span>Osogbo, Osun State, Nigeria</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span>📱</span>
+                                    <a href="https://wa.me/2349014603028" target="_blank" rel="noopener noreferrer"
+                                        class="hover:text-emerald-400 transition-colors">+234 (0) WhatsApp Support</a>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span>✉️</span>
+                                    <a href="mailto:koleofficial9@gmail.com"
+                                        class="hover:text-emerald-400 transition-colors">
+                                        koleofficial9@gmail.com
+                                    </a>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span>⏱️</span>
+                                    <span>Mon – Sat: 7:00 AM – 7:00 PM</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 4: Community & Social Links -->
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Connect With Us</h4>
+                            <p class="text-xs text-gray-400">
+                                Follow our clean community initiatives and pilot updates across Osun State.
+                            </p>
+                            <div class="flex items-center gap-3">
+                                <!-- Instagram -->
+                                <a href="https://www.instagram.com/koleoffical_page?stkn=MTV6ZTRrNnMycWRjbw==" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Instagram"
+                                    class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-kole-green text-gray-300 hover:text-white flex items-center justify-center transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                    </svg>
+                                </a>
+
+                                <!-- LinkedIn -->
+                                <a href="https://www.linkedin.com/company/k%C3%B3l%C3%A8official/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="LinkedIn"
+                                    class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-kole-green text-gray-300 hover:text-white flex items-center justify-center transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.262-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
 
                     <!-- Bottom Copyright Row -->
@@ -837,17 +874,20 @@
                         class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
                         <p>© 2026 KóLẹ̀ Platforms. All rights reserved.</p>
                         <div class="flex items-center gap-6 font-medium">
-                            <a href="#" onclick="openSurvey(event)"
+                            <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">Web App</a>
+                            <span>•</span>
+                            <a href="#" onclick="openSurvey(event, 'resident')"
                                 class="hover:text-emerald-400 transition-colors">Early
                                 Access Survey</a>
                             <span>•</span>
-                            <a href="#" onclick="openSurvey(event)"
+                            <a href="#" onclick="openSurvey(event, 'collector')"
                                 class="hover:text-emerald-400 transition-colors">Collector Partner Registration</a>
                         </div>
                     </div>
 
                 </div>
-        </footer>
+            </footer>
+        </main>
     </div>
 
 </body>
