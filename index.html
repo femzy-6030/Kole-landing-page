@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KóLẹ̀ - Connecting Waste Carriers & Homes in Osogbo</title>
-    <link rel="icon" type="image/png" href="Kole%20favicon.png">
+    <link rel="icon" type="image/png" href="Kole favicon.png">
 
     <!-- SEO & Social Meta Tags -->
-    <meta name="description" content="Fast, on-demand waste pickup in Osogbo. KóLẹ̀ connects house owners, local businesses, and verified waste collectors directly.">
+    <meta name="description"
+        content="Fast, on-demand waste pickup in Osogbo. KóLẹ̀ connects house owners, local businesses, and verified waste collectors directly.">
     <meta property="og:title" content="KóLẹ̀ - On-Demand Waste Pickup in Osogbo">
-    <meta property="og:description" content="Don't wait weeks for delayed municipal trucks. Get on-demand waste clearance matched with nearby verified collectors.">
+    <meta property="og:description"
+        content="Don't wait weeks for delayed municipal trucks. Get on-demand waste clearance matched with nearby verified collectors.">
     <meta property="og:type" content="website">
 
-    <!-- Network Optimizations -->
-    <link rel="dns-prefetch" href="https://docs.google.com">
+    <!-- Network Latency Optimizations for Osogbo Mobile Networks -->
+    <link rel="dns-prefetch" href="https://forms.google.com">
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-
     <!-- Google Font: Lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap"
+        rel="stylesheet">
 
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,36 +44,24 @@
                 }
             }
         }
-
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const openIcon = document.getElementById('menu-open-icon');
             const closeIcon = document.getElementById('menu-close-icon');
 
-            if (menu) menu.classList.toggle('hidden');
-            if (openIcon) openIcon.classList.toggle('hidden');
-            if (closeIcon) closeIcon.classList.toggle('hidden');
+            menu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
         }
     </script>
 
-    <!-- Custom CSS Fallbacks & Base Styling -->
+    <!-- Custom CSS Overrides -->
     <style>
-        :root {
-            --kole-green: #0F7A4D;
-            --kole-navy: #1A3B8B;
-            --kole-dark: #0B1320;
-            --kole-light: #F8FAFC;
-        }
         body {
-            font-family: 'Lato', system-ui, -apple-system, sans-serif;
+            font-family: 'Lato', sans-serif;
             background-color: #FFFFFF;
             color: #0B1320;
-            margin: 0;
-            padding: 0;
             -webkit-font-smoothing: antialiased;
-        }
-        #hero {
-            background-color: #052e1c;
         }
     </style>
 </head>
@@ -77,17 +69,24 @@
 <body class="bg-white text-kole-dark font-lato antialiased selection:bg-kole-green selection:text-white">
 
     <script>
-        // Survey Routing Links
+        // Set your primary survey form link here
         const PRIMARY_SURVEY_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfTMsySBxmfNfyFSbNPZUkOEOswTqRzZ5Le_Cy3MQyn0zcatg/viewform?usp=header";
-        const RESIDENT_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfTMsySBxmfNfyFSbNPZUkOEOswTqRzZ5Le_Cy3MQyn0zcatg/viewform?usp=header";
-        const COLLECTOR_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd4dEeH8WpCm8VjQ_ewqNWV7W1j8VoJiMf0leTqD9V0GDqsgg/viewform?usp=header";
 
+        /**
+         * Handles routing to the survey with optional audience segment tags.
+         * @param {Event} event - DOM click event
+         * @param {string} [segment='general'] - Household, collector, or general segment
+         */
         function openSurvey(event, type = 'resident') {
             if (event) {
                 event.preventDefault();
                 event.stopPropagation();
             }
-            const targetUrl = type === 'collector' ? COLLECTOR_FORM_URL : RESIDENT_FORM_URL;
+
+            const residentFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfTMsySBxmfNfyFSbNPZUkOEOswTqRzZ5Le_Cy3MQyn0zcatg/viewform?usp=header";
+            const collectorFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSd4dEeH8WpCm8VjQ_ewqNWV7W1j8VoJiMf0leTqD9V0GDqsgg/viewform?usp=header";
+
+            const targetUrl = type === 'collector' ? collectorFormUrl : residentFormUrl;
             window.open(targetUrl, '_blank', 'noopener,noreferrer');
         }
 
@@ -95,7 +94,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             if ('connection' in navigator) {
                 const conn = navigator.connection;
-                if (conn && (conn.saveData || conn.effectiveType === '2g' || conn.effectiveType === 'slow-2g')) {
+                if (conn.saveData || conn.effectiveType === '2g' || conn.effectiveType === 'slow-2g') {
                     document.documentElement.classList.add('low-bandwidth');
                 }
             }
@@ -105,6 +104,7 @@
     <!-- MAIN CONTAINER -->
     <div id="app" class="min-h-screen flex flex-col justify-between">
 
+        <!-- HEADER / NAVBAR WILL GO HERE (Milestone 7) -->
         <!-- HEADER / NAVBAR -->
         <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,11 +114,12 @@
                     <div class="flex flex-col sm:flex-row sm:items-center sm:gap-3 justify-center shrink-0">
                         <a href="#" class="block shrink-0">
                             <img src="Kole.png" alt="KóLẹ̀ Logo"
-                                class="h-10 sm:h-12 w-auto object-contain transition-opacity hover:opacity-90"
-                                onerror="this.onerror=null; this.src='Kole%204.png';">
+                                class="h-10 sm:h-12 w-auto object-contain mix-blend-multiply transition-opacity hover:opacity-90"
+                                style="filter: brightness(1.1) contrast(1.2);">
                         </a>
-                        <div class="hidden lg:block">
-                            <span class="text-[12px] font-extrabold uppercase tracking-wider text-[#014926]">
+                        <div>
+                            <span
+                                class="text-[9px] sm:text-[14px] font-extrabold uppercase tracking-wider text-[#014926]">
                                 Connecting Waste Carriers & Homes
                             </span>
                         </div>
@@ -146,12 +147,16 @@
                             class="p-2.5 rounded-xl text-gray-700 hover:text-kole-green hover:bg-slate-100 transition-colors focus:outline-none"
                             aria-label="Toggle navigation menu">
                             <!-- Hamburger Icon -->
-                            <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                             <!-- Close (X) Icon -->
-                            <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
                     </div>
@@ -160,10 +165,14 @@
                 <!-- Mobile Dropdown Menu -->
                 <div id="mobile-menu" class="hidden md:hidden pb-6 pt-2 border-t border-gray-100 space-y-4">
                     <nav class="flex flex-col space-y-3 font-semibold text-base text-gray-700 px-2">
-                        <a href="#how-it-works" onclick="toggleMobileMenu()" class="hover:text-kole-green py-2 transition-colors">How It Works</a>
-                        <a href="#problem-solution" onclick="toggleMobileMenu()" class="hover:text-kole-green py-2 transition-colors">Why KóLẹ̀</a>
-                        <a href="#benefits" onclick="toggleMobileMenu()" class="hover:text-kole-green py-2 transition-colors">Partnership</a>
-                        <a href="#stats" onclick="toggleMobileMenu()" class="hover:text-kole-green py-2 transition-colors">Pilot Stats</a>
+                        <a href="#how-it-works" onclick="toggleMobileMenu()"
+                            class="hover:text-kole-green py-2 transition-colors">How It Works</a>
+                        <a href="#problem-solution" onclick="toggleMobileMenu()"
+                            class="hover:text-kole-green py-2 transition-colors">Why KóLẹ̀</a>
+                        <a href="#benefits" onclick="toggleMobileMenu()"
+                            class="hover:text-kole-green py-2 transition-colors">Partnership</a>
+                        <a href="#stats" onclick="toggleMobileMenu()"
+                            class="hover:text-kole-green py-2 transition-colors">Pilot Stats</a>
                     </nav>
                     <div class="pt-2 px-2">
                         <button onclick="openSurvey(event, 'resident'); toggleMobileMenu();"
@@ -175,38 +184,46 @@
                 </div>
             </div>
         </header>
-
         <!-- MAIN CONTENT AREA -->
         <main>
-
+            <!-- HERO SECTION WILL GO HERE (Milestone 7) -->
             <!-- HERO SECTION -->
-            <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-emerald-950">
-                <!-- Background Image -->
+            <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+
+                <!-- 1. The Background Image -->
                 <div class="absolute inset-0 z-0">
-                    <img src="hero%20sec.png" alt="Clean Osogbo Neighborhood"
-                        class="w-full h-full object-cover"
-                        onerror="this.style.display='none';">
+                    <!-- Replace 'hero-bg.jpg' with the actual name of your image file -->
+                    <img src="hero sec.png" alt="Clean Osogbo Neighborhood" class="w-full h-full object-cover" />
                 </div>
 
-                <!-- Green Overlay -->
-                <div class="absolute inset-0 z-0 bg-gradient-to-br from-kole-green/70 to-[#052e1c]/80 backdrop-blur-[2px] mix-blend-multiply"></div>
+                <!-- 2. The Green Faded/Blur Overlay -->
+                <div
+                    class="absolute inset-0 z-0 bg-gradient-to-br from-kole-green/60 to-[#052e1c]/70 backdrop-blur-sm mix-blend-multiply">
+                </div>
 
-                <!-- Hero Content -->
+                <!-- 3. The Hero Content (Notice the 'relative z-10' which keeps it above the image) -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-emerald-200 mb-6">
+
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-emerald-200 mb-6">
                         Connecting Waste Carriers & Homes
                     </span>
 
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight max-w-4xl mx-auto mb-6">
+                    <h1
+                        class="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight max-w-4xl mx-auto mb-6">
                         On-Demand Waste Clearance For <span class="text-yellow-400">Osogbo</span>
                     </h1>
 
                     <p class="text-lg sm:text-xl text-emerald-50 max-w-2xl mx-auto font-normal leading-relaxed mb-10">
-                        Stop waiting for unpredictable municipal trucks. Request a pickup anytime, pay a specific standard fee, and get your compound cleared by verified local collectors in minutes.
+                        Stop waiting for unpredictable municipal trucks. Request a pickup anytime, pay a specific
+                        payment
+                        fee, and get your compound cleared by verified local collectors in minutes.
                     </p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+                        <!-- Primary Hero CTA -->
                         <button type="button" onclick="openSurvey(event, 'resident')"
                             class="w-full sm:w-auto bg-white hover:bg-slate-100 text-kole-green px-8 py-3.5 sm:py-4 rounded-xl font-black text-sm sm:text-base shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer">
                             <span>Get Early Access</span>
@@ -215,118 +232,51 @@
                             </svg>
                         </button>
 
+                        <!-- Secondary Hero CTA -->
                         <button type="button" onclick="openSurvey(event, 'collector')"
                             class="w-full sm:w-auto bg-transparent hover:bg-white/10 border-2 border-white/30 hover:border-white/60 text-white px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer">
                             <span>Join as a Collector</span>
                         </button>
-                    </div>
 
-                    <!-- Trust indicators -->
-                    <div class="mt-12 pt-8 border-t border-white/20 flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-90">
+                    </div> <!-- Trust indicators -->
+                    <div
+                        class="mt-12 pt-8 border-t border-white/20 flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-80">
                         <div class="flex items-center gap-2 text-white font-semibold text-sm">
-                            <span class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs font-bold">✓</span>
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
                             Fast Dispatch
                         </div>
                         <div class="flex items-center gap-2 text-white font-semibold text-sm">
-                            <span class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs font-bold">✓</span>
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
                             Verified Routes
                         </div>
                         <div class="flex items-center gap-2 text-white font-semibold text-sm">
-                            <span class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs font-bold">✓</span>
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
                             Specific Pricing
                         </div>
                     </div>
+
                 </div>
             </section>
-
-            <!-- HOW IT WORKS SECTION -->
-            <section id="how-it-works" class="py-16 md:py-24 bg-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto space-y-4">
-                        <span class="text-kole-navy font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-                            Simple 3-Step Process
-                        </span>
-                        <h2 class="text-3xl sm:text-4xl font-black text-kole-dark tracking-tight">
-                            How KóLẹ̀ Clears Waste in Minutes
-                        </h2>
-                        <p class="text-base sm:text-lg text-gray-600">
-                            No delays, no missed municipal schedules. Get your compound cleared in 3 fast steps.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14 relative">
-                        <!-- Step 1 -->
-                        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm relative flex flex-col justify-between group hover:border-kole-green transition-all hover:shadow-md">
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between">
-                                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-kole-green flex items-center justify-center font-bold text-xl">
-                                        01
-                                    </div>
-                                    <span class="text-xs font-bold text-kole-navy bg-slate-100 px-2.5 py-1 rounded-md">Households & Shops</span>
-                                </div>
-                                <h3 class="text-xl font-bold text-kole-dark">Request a Pickup</h3>
-                                <p class="text-sm text-gray-600 leading-relaxed">
-                                    Select your location zone in Osogbo, snap a quick photo of your waste volume, and trigger an instant clearance request whenever your compound bin is full.
-                                </p>
-                            </div>
-                            <div class="pt-6 mt-6 border-t border-gray-100 flex items-center text-xs font-bold text-kole-green">
-                                <span>Flat service fee</span>
-                            </div>
-                        </div>
-
-                        <!-- Step 2 -->
-                        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm relative flex flex-col justify-between group hover:border-kole-green transition-all hover:shadow-md">
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between">
-                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-kole-navy flex items-center justify-center font-bold text-xl">
-                                        02
-                                    </div>
-                                    <span class="text-xs font-bold text-kole-green bg-emerald-50 px-2.5 py-1 rounded-md">Independent Collectors</span>
-                                </div>
-                                <h3 class="text-xl font-bold text-kole-dark">Smart Collector Match</h3>
-                                <p class="text-sm text-gray-600 leading-relaxed">
-                                    Nearby verified truck operators instantly receive your pickup dispatch with location guidance, eliminating fuel waste on blind routes.
-                                </p>
-                            </div>
-                            <div class="pt-6 mt-6 border-t border-gray-100 flex items-center text-xs font-bold text-kole-navy">
-                                <span>Guaranteed local route dispatches</span>
-                            </div>
-                        </div>
-
-                        <!-- Step 3 -->
-                        <div class="bg-white rounded-2xl p-8 border border-gray-200/80 shadow-sm relative flex flex-col justify-between group hover:border-kole-green transition-all hover:shadow-md">
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between">
-                                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-kole-green flex items-center justify-center font-bold text-xl">
-                                        03
-                                    </div>
-                                    <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-md">Verified Clearance</span>
-                                </div>
-                                <h3 class="text-xl font-bold text-kole-dark">Clean Compound</h3>
-                                <p class="text-sm text-gray-600 leading-relaxed">
-                                    Your assigned collector arrives, loads the waste, and disposes at approved government dumpsites. Your surroundings stay hygienic and odor-free.
-                                </p>
-                            </div>
-                            <div class="pt-6 mt-6 border-t border-gray-100 flex items-center text-xs font-bold text-kole-green">
-                                <span>100% verified disposal</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <!-- PROBLEM VS SOLUTION SECTION (Milestone 8) -->
             <!-- PROBLEM VS SOLUTION SECTION -->
-            <section id="problem-solution" class="py-16 md:py-24 bg-slate-50 border-t border-gray-200/60">
+            <section id="problem-solution" class="py-16 md:py-24 bg-white">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                    <!-- Section Header -->
                     <div class="text-center max-w-3xl mx-auto space-y-4">
-                        <span class="text-rose-600 font-bold text-xs uppercase tracking-widest bg-rose-50 px-3 py-1 rounded-full border border-rose-100">
+                        <span
+                            class="text-rose-600 font-bold text-xs uppercase tracking-widest bg-rose-50 px-3 py-1 rounded-full border border-rose-100">
                             The Osogbo Waste Reality
                         </span>
                         <h2 class="text-3xl sm:text-4xl font-black text-kole-dark tracking-tight">
                             Why Traditional Waste Collection Fails Homes & Businesses
                         </h2>
                         <p class="text-base sm:text-lg text-gray-600">
-                            Relying on unpredictable schedules causes overflow, health hazards, and unnecessary stress. KóLẹ̀ fixes this broken model.
+                            Relying on unpredictable schedules causes overflow, health hazards, and unnecessary stress.
+                            KóLẹ̀ fixes this broken model.
                         </p>
                     </div>
 
@@ -334,9 +284,10 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
 
                         <!-- Old Way (Problem) Card -->
-                        <div class="bg-white rounded-3xl p-8 border border-rose-100 shadow-sm space-y-6">
+                        <div class="bg-rose-50/50 rounded-3xl p-8 border border-rose-100 space-y-6">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-lg">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-lg">
                                     ✕
                                 </div>
                                 <div>
@@ -348,33 +299,33 @@
                             <ul class="space-y-4 text-sm text-gray-700">
                                 <li class="flex items-start gap-3">
                                     <span class="text-rose-500 font-bold text-base mt-0.5">✕</span>
-                                    <span><strong>Uncertain Schedules:</strong> Waiting weeks for municipal trucks while waste sits in your compound attracting flies and rodents.</span>
+                                    <span><strong>Uncertain Schedules:</strong> Waiting weeks for municipal trucks while
+                                        waste sits in your compound attracting flies and rodents.</span>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="text-rose-500 font-bold text-base mt-0.5">✕</span>
-                                    <span><strong>Arbitrary Fees:</strong> Unpredictable pricing and cash-only demands at your gate with no receipt or standard rate.</span>
+                                    <span><strong>Arbitrary Fees:</strong> Unpredictable pricing and cash-only demands
+                                        at your gate with no receipt or standard rate.</span>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="text-rose-500 font-bold text-base mt-0.5">✕</span>
-                                    <span><strong>Illegal Dumping Risks:</strong> Unverified cart pushers dumping trash in nearby gutters or street corners.</span>
+                                    <span><strong>Illegal Dumping Risks:</strong> Unverified cart pushers dumping trash
+                                        in nearby gutters or street corners.</span>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="text-rose-500 font-bold text-base mt-0.5">✕</span>
-                                    <span><strong>Wasted Fuel for Collectors:</strong> Truck drivers driving aimlessly looking for clients without guaranteed routes.</span>
+                                    <span><strong>Wasted Fuel for Collectors:</strong> Truck drivers driving aimlessly
+                                        looking for clients without guaranteed routes.</span>
                                 </li>
                             </ul>
-
-                            <div class="pt-4 border-t border-rose-100/60">
-                                <div class="p-3.5 rounded-xl bg-rose-50 border border-rose-100 text-xs text-rose-700 font-semibold text-center">
-                                    Result: Odors, health hazards, and cluttered compounds.
-                                </div>
-                            </div>
                         </div>
 
                         <!-- KóLẹ̀ Way (Solution) Card -->
-                        <div class="bg-white rounded-3xl p-8 border border-emerald-200/80 shadow-md space-y-6 relative overflow-hidden">
+                        <div
+                            class="bg-emerald-50/60 rounded-3xl p-8 border border-emerald-200/80 space-y-6 relative overflow-hidden shadow-sm">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-kole-green text-white flex items-center justify-center font-bold text-lg shadow-md shadow-kole-green/20">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-kole-green text-white flex items-center justify-center font-bold text-lg shadow-md shadow-kole-green/20">
                                     ✓
                                 </div>
                                 <div>
@@ -386,25 +337,152 @@
                             <ul class="space-y-4 text-sm text-gray-700">
                                 <li class="flex items-start gap-3">
                                     <span class="text-kole-green font-bold text-base mt-0.5">✓</span>
-                                    <span><strong>On-Demand Clearance:</strong> Book a pickup whenever your bin fills up and get cleared within 24 hours.</span>
+                                    <span><strong>On-Demand Clearance:</strong> Book a pickup whenever your bin fills up
+                                        and get cleared within 24 hours.</span>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="text-kole-green font-bold text-base mt-0.5">✓</span>
-                                    <span><strong>Flat Transparent Pricing:</strong> Clear flat rate per pickup with zero hidden charges.</span>
+                                    <span><strong>Flat Transparent Pricing:</strong> Clear flat rate per pickup with
+                                        zero hidden charges.</span>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="text-kole-green font-bold text-base mt-0.5">✓</span>
-                                    <span><strong>Verified Disposal Sites:</strong> All trash is collected by vetted operators and routed exclusively to approved disposal sites.</span>
+                                    <span><strong>Verified Disposal Sites:</strong> All trash is collected by vetted
+                                        operators and routed exclusively to approved disposal sites.</span>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="text-kole-green font-bold text-base mt-0.5">✓</span>
-                                    <span><strong>Optimized Collector Routes:</strong> Direct digital dispatches save fuel and guarantee steady daily income for collectors.</span>
+                                    <span><strong>Optimized Collector Routes:</strong> Direct digital dispatches save
+                                        fuel and guarantee steady daily income for collectors.</span>
                                 </li>
                             </ul>
+                        </div>
 
-                            <div class="pt-4 border-t border-emerald-100/80">
+                    </div>
+
+                </div>
+            </section>
+            <!-- PROBLEM VS SOLUTION SECTION -->
+            <!-- PROBLEM & SOLUTION SECTION -->
+            <section id="problem-solution" class="py-16 md:py-24 bg-slate-50 border-y border-gray-200/60">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                    <!-- Section Header -->
+                    <div class="text-center max-w-3xl mx-auto space-y-4">
+                        <span
+                            class="text-kole-navy font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                            The Osogbo Waste Reality
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-black text-kole-dark tracking-tight">
+                            Why Traditional Waste Collection Fails Homes
+                        </h2>
+                        <p class="text-base sm:text-lg text-gray-600">
+                            We compared old neighborhood waste habits with the on-demand KóLẹ̀ platform experience.
+                        </p>
+                    </div>
+
+                    <!-- Split Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+
+                        <!-- Card 1: The Problem (Old Way) -->
+                        <div
+                            class="bg-white rounded-3xl overflow-hidden border border-red-100 shadow-sm flex flex-col justify-between group">
+                            <div>
+                                <!-- Image Header with Dark Gradient Overlay -->
+                                <div class="h-52 relative overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&q=80"
+                                        alt="Unreliable Waste Dumping"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/40 to-transparent">
+                                    </div>
+                                    <span
+                                        class="absolute bottom-4 left-6 bg-red-500/90 backdrop-blur-md text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-lg">
+                                        The Old Way
+                                    </span>
+                                </div>
+
+                                <!-- Problem Points -->
+                                <div class="p-6 sm:p-8 space-y-4">
+                                    <h3 class="text-2xl font-black text-slate-900">Unpredictable & Unhygienic</h3>
+                                    <ul class="space-y-3.5 text-sm text-gray-600">
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✕</span>
+                                            <span><strong>Irregular Pickup Trucks:</strong> Waiting weeks for municipal
+                                                trucks leads to overflowing bins and bad odors.</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✕</span>
+                                            <span><strong>Illegal Roadside Dumping:</strong> Uncollected trash ends up
+                                                burned in compounds or dumped in gutters during rainfall.</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✕</span>
+                                            <span><strong>Unclear Bargaining Fees:</strong> Informal cart pushers charge
+                                                unpredictable prices without receipts.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6 sm:px-8 sm:pb-8">
+                                <div
+                                    class="p-3.5 rounded-xl bg-red-50 border border-red-100 text-xs text-red-700 font-semibold text-center">
+                                    Result: Odors, health hazards, and cluttered compounds.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: The Solution (The KóLẹ̀ Way) -->
+                        <div
+                            class="bg-white rounded-3xl overflow-hidden border border-emerald-200/80 shadow-md flex flex-col justify-between group">
+                            <div>
+                                <!-- Image Header with Green Gradient Overlay -->
+                                <div class="h-52 relative overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80"
+                                        alt="Clean KóLẹ̀ Eco Solution"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-[#052e1c]/90 via-[#0a5c3a]/50 to-transparent">
+                                    </div>
+                                    <span
+                                        class="absolute bottom-4 left-6 bg-kole-green text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-lg">
+                                        The KóLẹ̀ Way
+                                    </span>
+                                </div>
+
+                                <!-- Solution Points -->
+                                <div class="p-6 sm:p-8 space-y-4">
+                                    <h3 class="text-2xl font-black text-kole-dark">On-Demand & Verified</h3>
+                                    <ul class="space-y-3.5 text-sm text-gray-600">
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-emerald-100 text-kole-green flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                                            <span><strong>Instant Dispatch:</strong> Request a pickup on your schedule—a
+                                                verified collector arrives within 24 hours.</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-emerald-100 text-kole-green flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                                            <span><strong>Flat Pricing:</strong> Simple standard household rate
+                                                per pickup with digital payment verification.</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-emerald-100 text-kole-green flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                                            <span><strong>Government-Approved Dumpsites:</strong> 100% responsible
+                                                disposal to keep Osogbo clean and sustainable.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6 sm:px-8 sm:pb-8">
                                 <button onclick="openSurvey(event, 'resident')"
-                                    class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+                                    class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
                                     <span>Switch To On-Demand Clearance</span>
                                     <span>→</span>
                                 </button>
@@ -412,23 +490,27 @@
                         </div>
 
                     </div>
+
                 </div>
             </section>
 
+            <!-- DUAL AUDIENCE BENEFITS SECTION (Milestone 8) -->
             <!-- DUAL AUDIENCE BENEFITS SECTION -->
             <section id="benefits" class="py-16 md:py-24 bg-kole-light border-y border-gray-100">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                     <!-- Section Header -->
                     <div class="text-center max-w-3xl mx-auto space-y-4">
-                        <span class="text-kole-navy font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                        <span
+                            class="text-kole-navy font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
                             Built For Both Sides
                         </span>
                         <h2 class="text-3xl sm:text-4xl font-black text-kole-dark tracking-tight">
                             Empowering Osogbo Communities & Collectors
                         </h2>
                         <p class="text-base sm:text-lg text-gray-600">
-                            Whether you need your compound cleared today or run a waste truck business, KóLẹ̀ is built to deliver real value.
+                            Whether you need your compound cleared today or run a waste truck business, KóLẹ̀ is built
+                            to deliver real value.
                         </p>
                     </div>
 
@@ -436,123 +518,338 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
 
                         <!-- Column 1: For Households & Businesses -->
-                        <div class="bg-white rounded-3xl p-8 border border-gray-200/80 shadow-xs flex flex-col justify-between space-y-6">
-                            <div class="space-y-4">
-                                <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-kole-green flex items-center justify-center font-bold text-xl">
-                                    🏠
+                        <div
+                            class="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-sm flex flex-col justify-between group">
+                            <div>
+                                <!-- Image Header: Household Waste Bin & Clean Yard -->
+                                <div class="h-48 relative overflow-hidden">
+                                    <img src="Kole17.png" alt="Clean Household Waste Bin"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-[#052e1c]/90 via-[#0a5c3a]/40 to-transparent">
+                                    </div>
+                                    <span
+                                        class="absolute bottom-4 left-6 bg-kole-green text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-lg">
+                                        For Residents & Businesses
+                                    </span>
                                 </div>
-                                <h3 class="text-2xl font-black text-kole-dark">For Households & Shops</h3>
-                                <p class="text-sm text-gray-600">
-                                    Take back control of your surroundings with hassle-free, on-demand waste evacuation.
-                                </p>
-                                <ul class="space-y-3 text-sm text-gray-600">
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-kole-green font-bold">✓</span>
-                                        <span><strong>Doorstep Pickup On-Demand:</strong> Book whenever your bin is full.</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-kole-green font-bold">✓</span>
-                                        <span><strong>Staging Bay Notes:</strong> Leave specific directions for easy collector access.</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-kole-green font-bold">✓</span>
-                                        <span><strong>Affordable Standard Rates:</strong> Transparent pricing with digital receipts.</span>
-                                    </li>
-                                </ul>
+
+                                <div class="p-6 sm:p-8 space-y-6">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-2xl bg-emerald-100/70 text-kole-green flex items-center justify-center font-bold text-2xl shrink-0">
+                                            🏡
+                                        </div>
+                                        <div>
+                                            <h3 class="text-2xl font-black text-kole-dark">For House Owners & Shops</h3>
+                                            <p class="text-xs text-kole-green font-bold uppercase tracking-wider">Fast,
+                                                Hygienic & Hassle-Free</p>
+                                        </div>
+                                    </div>
+
+                                    <ul class="space-y-4 text-sm text-gray-600">
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-emerald-100 text-kole-green flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                                            <span><strong>Instant Requesting:</strong> Schedule pickups on demand when
+                                                your bin is full. No waiting weeks for a scheduled truck.</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-emerald-100 text-kole-green flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                                            <span><strong>Clean & Healthy Compounds:</strong> Eliminate bad odors,
+                                                insects, and overflow hazards around your home or shop front.</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-emerald-100 text-kole-green flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                                            <span><strong>Fair Pricing & Receipts:</strong> Pay transparent flat rates
+                                                with digital verification for every clearance completed.</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <button onclick="window.open('https://kole-web-app-lac.vercel.app', '_blank')"
-                                class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
-                                <span>Launch Web App & Request Pickup</span>
-                                <span>→</span>
-                            </button>
+
+                            <div class="px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
+                                <button onclick="openSurvey(event, 'resident')"
+                                    class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                                    <span>Switch To On-Demand Clearance</span>
+                                    <span>→</span>
+                                </button>
+                            </div>
                         </div>
 
-                        <!-- Column 2: For Collectors & Waste Operators -->
-                        <div class="bg-slate-900 text-white rounded-3xl p-8 border border-slate-800 shadow-md flex flex-col justify-between space-y-6">
-                            <div class="space-y-4">
-                                <div class="w-12 h-12 rounded-2xl bg-slate-800 text-emerald-400 flex items-center justify-center font-bold text-xl">
-                                    🚛
+                        <!-- Column 2: For Waste Collectors & Operators -->
+                        <div
+                            class="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-sm flex flex-col justify-between group">
+                            <div>
+                                <!-- Image Header: Waste Collection Truck / Logistics -->
+                                <div class="h-48 relative overflow-hidden">
+                                    <img src="Kole 16.png" alt="Waste Collection Truck Operator"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-[#0c1b40]/90 via-[#1A3B8B]/40 to-transparent">
+                                    </div>
+                                    <span
+                                        class="absolute bottom-4 left-6 bg-kole-navy text-white text-xs font-black uppercase tracking-wider px-3 py-1 rounded-lg">
+                                        For Truck & Carrier Operators
+                                    </span>
                                 </div>
-                                <h3 class="text-2xl font-black text-white">For Waste Collectors & Operators</h3>
-                                <p class="text-sm text-slate-300">
-                                    Maximize truck efficiency, eliminate idle fuel waste, and secure steady daily income.
-                                </p>
-                                <ul class="space-y-3 text-sm text-slate-300">
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-                                        <span><strong>Guaranteed Local Jobs:</strong> Access direct pickup dispatches in active clusters.</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-                                        <span><strong>Cluster Route Optimization:</strong> Save fuel with pre-batched neighborhood jobs.</span>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <span class="text-emerald-400 font-bold">✓</span>
-                                        <span><strong>80% Revenue Share:</strong> Direct payouts to your bank account per completed trip.</span>
-                                    </li>
-                                </ul>
+
+                                <div class="p-6 sm:p-8 space-y-6">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-12 h-12 rounded-2xl bg-blue-100/70 text-kole-navy flex items-center justify-center font-bold text-2xl shrink-0">
+                                            🚚
+                                        </div>
+                                        <div>
+                                            <h3 class="text-2xl font-black text-kole-dark">For Waste Collectors</h3>
+                                            <p class="text-xs text-kole-navy font-bold uppercase tracking-wider">More
+                                                Earnings & Optimized Routes</p>
+                                        </div>
+                                    </div>
+
+                                    <ul class="space-y-4 text-sm text-gray-600">
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-blue-100 text-kole-navy flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                                            <span><strong>Guaranteed Pickup Jobs:</strong> Receive direct job dispatches
+                                                from nearby neighborhoods without wandering aimlessly.</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-blue-100 text-kole-navy flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                                            <span><strong>Reduced Fuel Costs:</strong> Optimized route batching keeps
+                                                your tricycle or truck operating within tight, profitable
+                                                clusters.</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span
+                                                class="w-5 h-5 rounded-full bg-blue-100 text-kole-navy flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                                            <span><strong>Fair & Predictable Payouts:</strong> Retain 85% of total job
+                                                fees with transparent weekly or daily digital payouts.</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <button onclick="window.open('https://kole-web-app-lac.vercel.app/?collector=true', '_blank')"
-                                class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
-                                <span>Register Fleet & Settlement Bank</span>
-                                <span>→</span>
-                            </button>
+
+                            <div class="px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
+                                <button onclick="openSurvey(event, 'collector')"
+                                    class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                                    <span>Register as a Waste Collector</span>
+                                    <span>→</span>
+                                </button>
+                            </div>
                         </div>
 
                     </div>
+
                 </div>
             </section>
-
+            <!-- PILOT STATS SECTION (Milestone 8) -->
             <!-- PILOT STATS SECTION -->
-            <section id="stats" class="py-16 bg-emerald-950 text-white border-b border-emerald-900">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-300 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-800">
-                        Osogbo Pilot Operations
-                    </span>
-                    <h2 class="text-3xl font-black text-white">Delivering Clean Surroundings Across Active Clusters</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        <div class="bg-emerald-900/40 p-6 rounded-2xl border border-emerald-800/80">
-                            <p class="text-3xl font-black text-emerald-400">4+</p>
-                            <p class="text-xs text-slate-300 mt-1">Active Clusters (Oke-Fia, Sabo, etc.)</p>
+            <section id="stats" class="py-16 md:py-24 bg-kole-dark text-white relative overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                    <!-- Section Header -->
+                    <div class="text-center max-w-3xl mx-auto space-y-4">
+                        <span
+                            class="text-emerald-400 font-bold text-xs uppercase tracking-widest bg-emerald-950/80 px-3.5 py-1 rounded-full border border-emerald-800/50">
+                            Ground Pilot Readiness
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white">
+                            Designed for Osogbo’s Real Infrastructure
+                        </h2>
+                        <p class="text-base sm:text-lg text-gray-300">
+                            We are building KóLẹ̀ around local neighborhood densities, verified routes, and immediate
+                            community needs.
+                        </p>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-14">
+
+                        <!-- Stat Card 1 -->
+                        <div class="bg-slate-900/90 rounded-2xl p-6 border border-white/10 text-center space-y-2">
+                            <p class="text-3xl sm:text-4xl font-black text-emerald-400">&lt; 24 hrs</p>
+                            <p class="text-xs font-bold uppercase tracking-wider text-gray-400">Target Dispatch Speed
+                            </p>
+                            <p class="text-xs text-gray-500">From request to doorstep truck arrival</p>
                         </div>
-                        <div class="bg-emerald-900/40 p-6 rounded-2xl border border-emerald-800/80">
-                            <p class="text-3xl font-black text-emerald-400">&lt;24hrs</p>
-                            <p class="text-xs text-slate-300 mt-1">Emergency Dispatch SLA</p>
+
+                        <!-- Stat Card 3 -->
+                        <div class="bg-slate-900/90 rounded-2xl p-6 border border-white/10 text-center space-y-2">
+                            <p class="text-3xl sm:text-4xl font-black text-emerald-400">85%</p>
+                            <p class="text-xs font-bold uppercase tracking-wider text-gray-400">Collector Earnings</p>
+                            <p class="text-xs text-gray-500">Directly supporting local truck operators</p>
                         </div>
-                        <div class="bg-emerald-900/40 p-6 rounded-2xl border border-emerald-800/80">
-                            <p class="text-3xl font-black text-emerald-400">80%</p>
-                            <p class="text-xs text-slate-300 mt-1">Direct Collector Payout Share</p>
+
+                        <!-- Stat Card 4 -->
+                        <div class="bg-slate-900/90 rounded-2xl p-6 border border-white/10 text-center space-y-2">
+                            <p class="text-3xl sm:text-4xl font-black text-white">100%</p>
+                            <p class="text-xs font-bold uppercase tracking-wider text-gray-400">Verified Disposal</p>
+                            <p class="text-xs text-gray-500">Zero tolerance for roadside illegal dumping</p>
                         </div>
-                        <div class="bg-emerald-900/40 p-6 rounded-2xl border border-emerald-800/80">
-                            <p class="text-3xl font-black text-emerald-400">100%</p>
-                            <p class="text-xs text-slate-300 mt-1">Approved Government Dumpsites</p>
+                        <div class="bg-slate-900/90 rounded-2xl p-6 border border-white/10 text-center space-y-2">
+                            <p class="text-3xl sm:text-4xl font-black text-white">100%</p>
+                            <p class="text-xs font-bold uppercase tracking-wider text-gray-400">Accountability</p>
+                            <p class="text-xs text-gray-500">Tracked every step of the way</p>
                         </div>
                     </div>
+
+                    <!-- Neighborhood Tags -->
+                    <div class="mt-12 text-center space-y-3">
+                        <p class="text-xs font-bold uppercase tracking-widest text-gray-400">Initial Pilot Zones</p>
+                        <div class="flex flex-wrap items-center justify-center gap-2 max-w-xl mx-auto">
+                            <span
+                                class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-gray-300">Alekuwodo</span>
+                            <span
+                                class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-gray-300">Oke-Fia</span>
+                            <span
+                                class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-gray-300">Oja-Oba</span>
+                            <span
+                                class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-gray-300">Dada
+                                Estate</span>
+                            <span
+                                class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-semibold text-gray-300">Osogbo
+                                Central</span>
+                        </div>
+                    </div>
+
                 </div>
             </section>
-
+            <!-- FINAL CTA SECTION (Milestone 9) -->
         </main>
 
-        <!-- FOOTER -->
-        <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-xs">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
-                <div>
-                    <span class="text-xl font-black text-white">KÓLẸ̀</span>
-                    <p class="text-[11px] text-slate-500 mt-1">Connecting Waste Carriers & Homes in Osogbo</p>
-                </div>
-                <div class="flex flex-wrap gap-6 items-center justify-center">
-                    <a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a>
-                    <a href="#problem-solution" class="hover:text-white transition-colors">Why KóLẹ̀</a>
-                    <a href="#benefits" class="hover:text-white transition-colors">Partnership</a>
-                    <a href="#stats" class="hover:text-white transition-colors">Pilot Stats</a>
-                    <button onclick="window.open('https://kole-web-app-lac.vercel.app', '_blank')"
-                        class="text-emerald-400 font-bold hover:underline cursor-pointer">
-                        Launch Web App ➔
+        <!-- FOOTER WILL GO HERE (Milestone 9) -->
+        <!-- FINAL CALL TO ACTION BANNER -->
+        <section class="relative py-20 md:py-28 overflow-hidden text-white text-center">
+
+            <!-- 1. Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="Community.png" alt="Osogbo Clean Neighborhood" class="w-full h-full object-cover" />
+            </div>
+
+            <!-- 2. Dark Green Gradient & Blur Overlay -->
+            <div
+                class="absolute inset-0 z-0 bg-gradient-to-br from-kole-green/40 via-[#0a5c3a]/40 to-kole-dark/40 backdrop-blur-sm mix-blend-multiply">
+            </div>
+
+            <!-- 3. Banner Content -->
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
+
+                <span
+                    class="inline-block bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full text-emerald-100">
+                    Shape Osogbo's Clean Future
+                </span>
+
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-white">
+                    Ready for a Cleaner, Smell-Free Neighborhood?
+                </h2>
+
+                <p class="text-base sm:text-lg text-emerald-50 max-w-2xl mx-auto font-normal leading-relaxed">
+                    Take our quick 2-minute survey to help us map demand in your area and claim early-bird access when
+                    we launch near you.
+                </p>
+
+                <div class="pt-4">
+                    <button onclick="openSurvey(event)"
+                        class="bg-white hover:bg-slate-100 text-kole-dark font-black px-8 py-4 rounded-xl text-base shadow-xl transition-all hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2">
+                        <span>Tell Us What to Build</span>
+                        <span>→</span>
                     </button>
                 </div>
-            </div>
-        </footer>
 
+                <p class="text-xs text-emerald-200/80 pt-2">
+                    🔒 Your feedback remains confidential and directly guides our rollout.
+                </p>
+
+            </div>
+        </section>
+        <!-- FOOTER -->
+        <footer class="bg-kole-dark text-gray-400 pt-16 pb-8 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Main Footer Columns -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+
+                    <!-- Column 1: Brand Info -->
+                    <div class="space-y-4">
+                        <div class="inline-block bg-white px-3 py-1.5 rounded-xl shadow-sm">
+                            <img src="Kole premium 2.png" alt="KóLẹ̀ Logo"
+                                class="h-10 w-auto object-contain mix-blend-multiply"
+                                style="filter: brightness(1.1) contrast(1.2);">
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Connecting waste carriers and homes across Osogbo for fast, reliable, and hygienic on-demand
+                            waste management.
+                        </p>
+                    </div>
+
+                    <!-- Column 2: Contact & Direct Support -->
+                    <div class="space-y-3">
+                        <h4 class="text-sm font-bold text-white uppercase tracking-wider">Contact Us</h4>
+                        <ul class="space-y-2.5 text-xs font-medium text-gray-400">
+                            <li class="flex items-center gap-2">
+                                <span>📍</span> <span>Osogbo, Osun State, Nigeria</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span>📱</span> <a href="https://wa.me/2349014603028" target="_blank"
+                                    class="hover:text-emerald-400 transition-colors">+234 (0) WhatsApp Support</a>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span>✉️</span>
+                                <a href="mailto:koleofficial9@gmail.com"
+                                    class="hover:text-emerald-400 transition-colors">
+                                    koleofficial9@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Social Media Icons -->
+                    <!-- FOOTER SOCIAL LINKS -->
+                    <div class="flex items-center gap-3">
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/koleoffical_page?stkn=MTV6ZTRrNnMycWRjbw==" target="_blank"
+                            rel="noopener noreferrer" aria-label="Instagram"
+                            class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-kole-green text-gray-300 hover:text-white flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/k%C3%B3l%C3%A8official/" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn"
+                            class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-kole-green text-gray-300 hover:text-white flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.262-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Bottom Copyright Row -->
+                    <div
+                        class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+                        <p>© 2026 KóLẹ̀ Platforms. All rights reserved.</p>
+                        <div class="flex items-center gap-6 font-medium">
+                            <a href="#" onclick="openSurvey(event)"
+                                class="hover:text-emerald-400 transition-colors">Early
+                                Access Survey</a>
+                            <span>•</span>
+                            <a href="#" onclick="openSurvey(event)"
+                                class="hover:text-emerald-400 transition-colors">Collector Partner Registration</a>
+                        </div>
+                    </div>
+
+                </div>
+        </footer>
     </div>
+
 </body>
+
 </html>
