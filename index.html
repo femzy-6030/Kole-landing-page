@@ -104,7 +104,6 @@
     <!-- MAIN CONTAINER -->
     <div id="app" class="min-h-screen flex flex-col justify-between">
 
-        <!-- HEADER / NAVBAR WILL GO HERE (Milestone 7) -->
         <!-- HEADER / NAVBAR -->
         <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,8 +134,8 @@
 
                     <!-- Desktop CTA Buttons -->
                     <div class="hidden md:flex items-center gap-3 shrink-0">
-                        <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer"
-                            class="bg-emerald-800 hover:bg-emerald-900 text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all">
+                        <a href="https://app.kole.com.ng" target="_blank" rel="noopener noreferrer"
+                            class="bg-kole-green hover:bg-[#0c633e] text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all">
                             Launch Web App →
                         </a>
                     </div>
@@ -175,33 +174,31 @@
                             class="hover:text-kole-green py-2 transition-colors">Pilot Stats</a>
                     </nav>
                     <div class="pt-2 px-2">
-                        <button onclick="openSurvey(event, 'resident'); toggleMobileMenu();"
+                        <a href="https://app.kole.com.ng" target="_blank" rel="noopener noreferrer"
                             class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
-                            <span>Launch App</span>
+                            <span>Launch Web App</span>
                             <span>→</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
         </header>
         <!-- MAIN CONTENT AREA -->
         <main>
-            <!-- HERO SECTION WILL GO HERE (Milestone 7) -->
             <!-- HERO SECTION -->
-            <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+            <section id="hero" class="relative w-full min-h-[85vh] flex flex-col justify-center py-20 md:py-28 overflow-hidden">
 
                 <!-- 1. The Background Image -->
                 <div class="absolute inset-0 z-0">
-                    <!-- Replace 'hero-bg.jpg' with the actual name of your image file -->
                     <img src="hero sec.png" alt="Clean Osogbo Neighborhood" class="w-full h-full object-cover" />
                 </div>
 
-                <!-- 2. The Green Faded/Blur Overlay -->
+                <!-- 2. Deep Green/Dark Overlay -->
                 <div
-                    class="absolute inset-0 z-0 bg-gradient-to-br from-kole-green/60 to-[#052e1c]/70 backdrop-blur-sm mix-blend-multiply">
+                    class="absolute inset-0 z-0 bg-gradient-to-b from-kole-dark/80 via-kole-green/70 to-kole-dark/90 backdrop-blur-[2px]">
                 </div>
 
-                <!-- 3. The Hero Content (Notice the 'relative z-10' which keeps it above the image) -->
+                <!-- 3. The Hero Content -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
 
                     <span
@@ -221,151 +218,48 @@
                     </p>
 
                     <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-
-                        <!-- CTA Buttons -->
-                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-
-                            <!-- Direct Web App Hero CTA -->
-                            <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer"
-                                class="w-full sm:w-auto bg-emerald-800 hover:bg-emerald-900 text-white px-8 py-3.5 sm:py-4 rounded-xl font-black text-sm sm:text-base shadow-xl transition-all duration-200 hover:scale-[1.02] flex items-center justify-center gap-2">
-                                <span>Open Web App (app.kole.ng)</span>
-                                <svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </a>
-                            <!-- Secondary Hero CTA -->
-                            <button type="button" onclick="openSurvey(event, 'collector')"
-                                class="w-full sm:w-auto bg-transparent hover:bg-white/10 border-2 border-white/30 hover:border-white/60 text-white px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer">
-                                <span>Join as a Collector</span>
-                            </button>
-
-                        </div> <!-- Trust indicators -->
-                        <div
-                            class="mt-12 pt-8 border-t border-white/20 flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-80">
-                            <div class="flex items-center gap-2 text-white font-semibold text-sm">
-                                <span
-                                    class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
-                                Fast Dispatch
-                            </div>
-                            <div class="flex items-center gap-2 text-white font-semibold text-sm">
-                                <span
-                                    class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
-                                Verified Routes
-                            </div>
-                            <div class="flex items-center gap-2 text-white font-semibold text-sm">
-                                <span
-                                    class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-green text-xs">✓</span>
-                                Specific Pricing
-                            </div>
-                        </div>
-
-                    </div>
-            </section>
-            <!-- PROBLEM VS SOLUTION SECTION (Milestone 8) -->
-            <!-- PROBLEM VS SOLUTION SECTION -->
-            <section id="problem-solution" class="py-16 md:py-24 bg-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                    <!-- Section Header -->
-                    <div class="text-center max-w-3xl mx-auto space-y-4">
-                        <span
-                            class="text-rose-600 font-bold text-xs uppercase tracking-widest bg-rose-50 px-3 py-1 rounded-full border border-rose-100">
-                            The Osogbo Waste Reality
-                        </span>
-                        <h2 class="text-3xl sm:text-4xl font-black text-kole-dark tracking-tight">
-                            Why Traditional Waste Collection Fails Homes & Businesses
-                        </h2>
-                        <p class="text-base sm:text-lg text-gray-600">
-                            Relying on unpredictable schedules causes overflow, health hazards, and unnecessary stress.
-                            KóLẹ̀ fixes this broken model.
-                        </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mx-auto">
+                        <!-- Direct Web App Hero CTA -->
+                        <a href="https://app.kole.com.ng" target="_blank" rel="noopener noreferrer"
+                            class="w-full sm:w-auto bg-kole-green hover:bg-[#0c633e] text-white px-8 py-3.5 sm:py-4 rounded-xl font-black text-sm sm:text-base shadow-xl transition-all duration-200 hover:scale-[1.02] flex items-center justify-center gap-2">
+                            <span>Open Web App</span>
+                            <svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                        <!-- Secondary Hero CTA -->
+                        <button type="button" onclick="openSurvey(event, 'collector')"
+                            class="w-full sm:w-auto bg-transparent hover:bg-white/10 border-2 border-white/30 hover:border-white/60 text-white px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer">
+                            <span>Join as a Collector</span>
+                        </button>
                     </div>
 
-                    <!-- Contrast Grid -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+                    <!-- Horizontal Divider Line strictly BELOW hero buttons -->
+                    <div class="w-full border-t border-white/20 my-8"></div>
 
-                        <!-- Old Way (Problem) Card -->
-                        <div class="bg-rose-50/50 rounded-3xl p-8 border border-rose-100 space-y-6">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-lg">
-                                    ✕
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold text-gray-900">The Old Way</h3>
-                                    <p class="text-xs text-rose-600 font-semibold">Unpredictable & Frustrating</p>
-                                </div>
-                            </div>
-
-                            <ul class="space-y-4 text-sm text-gray-700">
-                                <li class="flex items-start gap-3">
-                                    <span class="text-rose-500 font-bold text-base mt-0.5">✕</span>
-                                    <span><strong>Uncertain Schedules:</strong> Waiting weeks for municipal trucks while
-                                        waste sits in your compound attracting flies and rodents.</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-rose-500 font-bold text-base mt-0.5">✕</span>
-                                    <span><strong>Arbitrary Fees:</strong> Unpredictable pricing and cash-only demands
-                                        at your gate with no receipt or standard rate.</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-rose-500 font-bold text-base mt-0.5">✕</span>
-                                    <span><strong>Illegal Dumping Risks:</strong> Unverified cart pushers dumping trash
-                                        in nearby gutters or street corners.</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-rose-500 font-bold text-base mt-0.5">✕</span>
-                                    <span><strong>Wasted Fuel for Collectors:</strong> Truck drivers driving aimlessly
-                                        looking for clients without guaranteed routes.</span>
-                                </li>
-                            </ul>
+                    <!-- Trust indicators centered BELOW divider -->
+                    <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-white">
+                        <div class="flex items-center gap-2 font-semibold text-sm">
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-dark text-xs font-bold">✓</span>
+                            Fast Dispatch
                         </div>
-
-                        <!-- KóLẹ̀ Way (Solution) Card -->
-                        <div
-                            class="bg-emerald-50/60 rounded-3xl p-8 border border-emerald-200/80 space-y-6 relative overflow-hidden shadow-sm">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-kole-green text-white flex items-center justify-center font-bold text-lg shadow-md shadow-kole-green/20">
-                                    ✓
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold text-kole-dark">The KóLẹ̀ Way</h3>
-                                    <p class="text-xs text-kole-green font-semibold">On-Demand & Transparent</p>
-                                </div>
-                            </div>
-
-                            <ul class="space-y-4 text-sm text-gray-700">
-                                <li class="flex items-start gap-3">
-                                    <span class="text-kole-green font-bold text-base mt-0.5">✓</span>
-                                    <span><strong>On-Demand Clearance:</strong> Book a pickup whenever your bin fills up
-                                        and get cleared within 24 hours.</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-kole-green font-bold text-base mt-0.5">✓</span>
-                                    <span><strong>Flat Transparent Pricing:</strong> Clear flat rate per pickup with
-                                        zero hidden charges.</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-kole-green font-bold text-base mt-0.5">✓</span>
-                                    <span><strong>Verified Disposal Sites:</strong> All trash is collected by vetted
-                                        operators and routed exclusively to approved disposal sites.</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="text-kole-green font-bold text-base mt-0.5">✓</span>
-                                    <span><strong>Optimized Collector Routes:</strong> Direct digital dispatches save
-                                        fuel and guarantee steady daily income for collectors.</span>
-                                </li>
-                            </ul>
+                        <div class="flex items-center gap-2 font-semibold text-sm">
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-dark text-xs font-bold">✓</span>
+                            Verified Routes
                         </div>
-
+                        <div class="flex items-center gap-2 font-semibold text-sm">
+                            <span
+                                class="w-5 h-5 rounded-full bg-emerald-400 flex items-center justify-center text-kole-dark text-xs font-bold">✓</span>
+                            Specific Pricing
+                        </div>
                     </div>
 
                 </div>
             </section>
+
             <!-- PROBLEM VS SOLUTION SECTION -->
-            <!-- PROBLEM & SOLUTION SECTION -->
             <section id="problem-solution" class="py-16 md:py-24 bg-slate-50 border-y border-gray-200/60">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -481,12 +375,12 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="px-6 pb-6 sm:px-8 sm:pb-8 space-y-3">
-                                <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer"
-                                    class="w-full bg-emerald-800 hover:bg-emerald-900 text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 text-center">
-                                    <span>Launch KóLẹ̀ Web App</span>
-                                    <span>→</span>
-                                    </button>
+
+                            <div class="px-6 pb-6 sm:px-8 sm:pb-8">
+                                <div
+                                    class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-100 text-xs text-kole-green font-semibold text-center">
+                                    Result: Clean compounds, scheduled pickups, and peace of mind.
+                                </div>
                             </div>
                         </div>
 
@@ -495,7 +389,6 @@
                 </div>
             </section>
 
-            <!-- DUAL AUDIENCE BENEFITS SECTION (Milestone 8) -->
             <!-- DUAL AUDIENCE BENEFITS SECTION -->
             <section id="benefits" class="py-16 md:py-24 bg-kole-light border-y border-gray-100">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -516,7 +409,7 @@
                     </div>
 
                     <!-- Benefits Dual Column Grid -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
 
                         <!-- Column 1: For Households & Businesses -->
                         <div
@@ -573,7 +466,7 @@
 
                             <div class="px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
                                 <button onclick="openSurvey(event, 'resident')"
-                                    class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                                    class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
                                     <span>Switch To On-Demand Clearance</span>
                                     <span>→</span>
                                 </button>
@@ -636,7 +529,7 @@
 
                             <div class="px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
                                 <button onclick="openSurvey(event, 'collector')"
-                                    class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                                    class="w-full bg-kole-green hover:bg-[#0c633e] text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
                                     <span>Register as a Waste Collector</span>
                                     <span>→</span>
                                 </button>
@@ -647,7 +540,7 @@
 
                 </div>
             </section>
-            <!-- PILOT STATS SECTION (Milestone 8) -->
+
             <!-- PILOT STATS SECTION -->
             <section id="stats" class="py-16 md:py-24 bg-kole-dark text-white relative overflow-hidden">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -719,49 +612,60 @@
 
                 </div>
             </section>
-            <!-- FOOTER WITH PROMINENT CTA BANNER INSIDE MAIN -->
-            <footer class="bg-kole-dark text-gray-400 pt-16 pb-12 border-t border-slate-800 relative">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- FULL-WIDTH EDGE-TO-EDGE BOTTOM CTA BANNER -->
+            <section class="w-full py-16 sm:py-20 bg-kole-dark relative overflow-hidden">
+                <!-- Community Background Image with Gradient Overlay -->
+                <div class="absolute inset-0 z-0">
+                    <img src="Community.png" alt="Clean Osogbo Neighborhood"
+                        class="w-full h-full object-cover"
+                        onerror="this.style.display='none';">
+                </div>
+                <div
+                    class="absolute inset-0 z-0 bg-gradient-to-br from-kole-green/40 to-[#052e1c]/50 backdrop-blur-[1px]">
+                </div>
 
-                    <!-- PROMINENT CTA BANNER CARD -->
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl mb-16 bg-gradient-to-br from-kole-green via-[#0c633e] to-emerald-800 border border-emerald-500/30 text-white">
-                        <!-- Community Background Image with Gradient Overlay -->
-                        <div class="absolute inset-0 z-0">
-                            <img src="Community.png" alt="Clean Osogbo Neighborhood" class="w-full h-full object-cover mix-blend-overlay opacity-30" onerror="this.style.display='none';">
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-r from-kole-green/90 via-[#0a5c3a]/85 to-emerald-950/90 z-0"></div>
+                <!-- Banner Card Content -->
+                <div
+                    class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-6">
+                    <span
+                        class="inline-block bg-white/15 border border-white/20 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full text-emerald-100">
+                        Shape Osogbo's Clean Future
+                    </span>
 
-                        <!-- Banner Card Content -->
-                        <div class="relative z-10 px-6 py-14 sm:px-12 sm:py-16 md:py-20 text-center max-w-4xl mx-auto space-y-6">
-                            <span class="inline-block bg-white/15 border border-white/20 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full text-emerald-100">
-                                Shape Osogbo's Clean Future
-                            </span>
+                    <h2
+                        class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-white">
+                        Ready to Clear Your Waste Without the Stress?
+                    </h2>
 
-                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-white">
-                                Ready to Clear Your Waste Without the Stress?
-                            </h2>
+                    <p
+                        class="text-base sm:text-lg text-emerald-50 max-w-2xl mx-auto font-normal leading-relaxed">
+                        Connect directly with verified local waste carriers and truck operators in Osogbo.
+                        On-demand doorstep pickup with transparent flat pricing.
+                    </p>
 
-                            <p class="text-base sm:text-lg text-emerald-50 max-w-2xl mx-auto font-normal leading-relaxed">
-                                Connect directly with verified local waste carriers and truck operators in Osogbo. On-demand doorstep pickup with transparent flat pricing.
-                            </p>
-
-                            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer"
-                                    class="w-full sm:w-auto bg-white hover:bg-slate-100 text-kole-dark font-black px-8 py-4 rounded-xl text-base shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center justify-center gap-2">
-                                    <span>Launch Web App (app.kole.ng)</span>
-                                    <span>→</span>
-                                </a>
-                                <button type="button" onclick="openSurvey(event, 'collector')"
-                                    class="w-full sm:w-auto bg-transparent hover:bg-white/10 border-2 border-white/40 hover:border-white text-white px-8 py-4 rounded-xl font-bold text-base transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center justify-center gap-2 cursor-pointer">
-                                    <span>Register as Collector</span>
-                                </button>
-                            </div>
-
-                            <p class="text-xs text-emerald-200/90 pt-2">
-                                🌿 Active pilot coverage across Alekuwodo, Oke-Fia, Oja-Oba, Dada Estate & Osogbo Central.
-                            </p>
-                        </div>
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="https://app.kole.com.ng" target="_blank" rel="noopener noreferrer"
+                            class="w-full sm:w-auto bg-white hover:bg-slate-100 text-kole-dark font-black px-8 py-4 rounded-xl text-base shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center justify-center gap-2">
+                            <span>Open Web App</span>
+                            <span>→</span>
+                        </a>
+                        <button type="button" onclick="openSurvey(event, 'collector')"
+                            class="w-full sm:w-auto bg-transparent hover:bg-white/10 border-2 border-white/40 hover:border-white text-white px-8 py-4 rounded-xl font-bold text-base transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] inline-flex items-center justify-center gap-2 cursor-pointer">
+                            <span>Register as Collector</span>
+                        </button>
                     </div>
+
+                    <p class="text-xs text-emerald-200/90 pt-2">
+                        🌿 Active pilot coverage across Alekuwodo, Oke-Fia, Oja-Oba, Dada Estate & Osogbo
+                        Central.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="bg-kole-dark text-gray-400 pt-16 pb-12 border-t border-slate-800 relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                     <!-- 4-COLUMN FOOTER GRID -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
@@ -775,9 +679,11 @@
                                     onerror="this.onerror=null; this.src='Kole.png';">
                             </div>
                             <p class="text-xs text-gray-400 leading-relaxed">
-                                Connecting waste carriers and homes across Osogbo for fast, reliable, and hygienic on-demand waste management.
+                                Connecting waste carriers and homes across Osogbo for fast, reliable, and hygienic
+                                on-demand waste management.
                             </p>
-                            <span class="inline-block text-[11px] font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-1 rounded-md">
+                            <span
+                                class="inline-block text-[11px] font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-1 rounded-md">
                                 Osogbo Pilot Operations
                             </span>
                         </div>
@@ -787,9 +693,9 @@
                             <h4 class="text-sm font-bold text-white uppercase tracking-wider">Web App Portal</h4>
                             <ul class="space-y-2.5 text-xs font-medium text-gray-400">
                                 <li>
-                                    <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer"
+                                    <a href="https://app.kole.com.ng" target="_blank" rel="noopener noreferrer"
                                         class="text-emerald-400 font-bold hover:text-emerald-300 flex items-center gap-1.5 transition-colors">
-                                        <span>Open Web App (app.kole.ng)</span>
+                                        <span>Open Web App</span>
                                         <span>➔</span>
                                     </a>
                                 </li>
@@ -800,13 +706,16 @@
                                     <a href="#problem-solution" class="hover:text-white transition-colors">Why KóLẹ̀</a>
                                 </li>
                                 <li>
-                                    <a href="#benefits" class="hover:text-white transition-colors">Households & Businesses</a>
+                                    <a href="#benefits" class="hover:text-white transition-colors">Households &
+                                        Businesses</a>
                                 </li>
                                 <li>
-                                    <a href="#benefits" class="hover:text-white transition-colors">Carrier & Fleet Operators</a>
+                                    <a href="#benefits" class="hover:text-white transition-colors">Carrier & Fleet
+                                        Operators</a>
                                 </li>
                                 <li>
-                                    <a href="#stats" class="hover:text-white transition-colors">Pilot Readiness Stats</a>
+                                    <a href="#stats" class="hover:text-white transition-colors">Pilot Readiness
+                                        Stats</a>
                                 </li>
                             </ul>
                         </div>
@@ -846,8 +755,8 @@
                             </p>
                             <div class="flex items-center gap-3">
                                 <!-- Instagram -->
-                                <a href="https://www.instagram.com/koleoffical_page?stkn=MTV6ZTRrNnMycWRjbw==" target="_blank"
-                                    rel="noopener noreferrer" aria-label="Instagram"
+                                <a href="https://www.instagram.com/koleoffical_page?stkn=MTV6ZTRrNnMycWRjbw=="
+                                    target="_blank" rel="noopener noreferrer" aria-label="Instagram"
                                     class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-kole-green text-gray-300 hover:text-white flex items-center justify-center transition-colors">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                         <path
@@ -874,7 +783,8 @@
                         class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
                         <p>© 2026 KóLẹ̀ Platforms. All rights reserved.</p>
                         <div class="flex items-center gap-6 font-medium">
-                            <a href="https://app.kole.ng" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors">Web App</a>
+                            <a href="https://app.kole.com.ng" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-emerald-400 transition-colors">Web App</a>
                             <span>•</span>
                             <a href="#" onclick="openSurvey(event, 'resident')"
                                 class="hover:text-emerald-400 transition-colors">Early
@@ -886,8 +796,7 @@
                     </div>
 
                 </div>
-            </footer>
-        </main>
+        </footer>
     </div>
 
 </body>
