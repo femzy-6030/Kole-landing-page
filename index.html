@@ -727,7 +727,7 @@
                     <!-- Section Header -->
                     <div class="text-center max-w-3xl mx-auto space-y-4">
                         <span
-                            class="text-kole-navy font-bold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                            class="text-kole-green font-bold text-xs uppercase tracking-widest bg-emerald-50 px-3.5 py-1 rounded-full border border-emerald-100">
                             Leadership & Innovation
                         </span>
                         <h2 class="text-3xl sm:text-4xl font-black text-kole-dark tracking-tight">
@@ -739,51 +739,51 @@
                         </p>
                     </div>
 
-                    <!-- 5-Card Team Grid (Clean 3-Column Layout) -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-14 max-w-6xl mx-auto">
-
-                        <!-- Member 1 -->
+                    <!-- 1. Founder & Lead Executive: Sits Alone and Centered -->
+                    <div class="mt-14 max-w-sm sm:max-w-md mx-auto">
                         <div
-                            class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-kole-green transition-all hover:shadow-md">
-                            <div class="space-y-4">
+                            class="bg-white rounded-3xl overflow-hidden border-2 border-emerald-100/90 shadow-md hover:shadow-2xl hover:border-kole-green transition-all duration-300 flex flex-col group">
+                            <!-- Professional 4:5 Portrait Proportion -->
+                            <div class="relative w-full aspect-[4/5] overflow-hidden bg-gray-100">
+                                <img src="Femi.jpg" alt="Oluwafemi Olayinka."
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                                 <div
-                                    class="relative w-20 h-20 rounded-2xl overflow-hidden shadow-md border-2 border-emerald-100 group-hover:border-kole-green transition-all">
-                                    <img src="Femi.jpg" alt="Oluwafemi O."
-                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-kole-green/40 via-transparent to-transparent opacity-80 pointer-events-none">
-                                    </div>
+                                    class="absolute inset-0 bg-gradient-to-t from-kole-green/30 via-transparent to-transparent pointer-events-none">
                                 </div>
+                            </div>
+                            <!-- Card Details -->
+                            <div class="p-6 sm:p-7 flex flex-col flex-1 justify-between space-y-3 bg-white">
                                 <div>
-                                    <h3 class="text-xl font-bold text-kole-dark">Oluwafemi Olayinka.</h3>
-                                    <p class="text-xs font-bold uppercase tracking-wider text-kole-green mt-0.5">Founder
-                                        & Lead Executive</p>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-kole-green">Founder & Lead Executive</p>
+                                    <h3 class="text-xl sm:text-2xl font-bold text-kole-dark tracking-tight mt-1">Oluwafemi Olayinka.</h3>
                                 </div>
-                                <p class="text-sm text-gray-600 leading-relaxed">
+                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed text-left">
                                     Oversees overall strategic vision, platform architecture, and operational rollout
                                     across residential corridors in Osogbo.
                                 </p>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- 2. Core Leadership Team: 4 Cards Side by Side -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-10 max-w-7xl mx-auto">
 
                         <!-- Member 2 -->
                         <div
-                            class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-kole-green transition-all hover:shadow-md">
-                            <div class="space-y-4">
+                            class="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl hover:border-kole-green transition-all duration-300 flex flex-col group">
+                            <div class="relative w-full aspect-[4/5] overflow-hidden bg-gray-100">
+                                <img src="rodiat.jpeg" alt="Rodiat Oyedeji."
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                                 <div
-                                    class="relative w-20 h-20 rounded-2xl overflow-hidden shadow-md border-2 border-emerald-100 group-hover:border-kole-green transition-all">
-                                    <img src="rodiat.jpeg" alt="Rodiat Oyedeji"
-                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-kole-green/40 via-transparent to-transparent opacity-80 pointer-events-none">
-                                    </div>
+                                    class="absolute inset-0 bg-gradient-to-t from-kole-green/25 via-transparent to-transparent pointer-events-none">
                                 </div>
+                            </div>
+                            <div class="p-5 sm:p-6 flex flex-col flex-1 justify-between space-y-3 bg-white">
                                 <div>
-                                    <h3 class="text-xl font-bold text-kole-dark">Rodiat Oyedeji.</h3>
-                                    <p class="text-xs font-bold uppercase tracking-wider text-kole-green mt-0.5">
-                                        Co-founder & Technology Lead</p>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-kole-green">Co-founder & Technology Lead</p>
+                                    <h3 class="text-lg sm:text-xl font-bold text-kole-dark tracking-tight mt-1">Rodiat Oyedeji.</h3>
                                 </div>
-                                <p class="text-sm text-gray-600 leading-relaxed">
+                                <p class="text-xs text-gray-600 leading-relaxed text-left">
                                     Manages collector onboarding, fleet route optimization, and partner driver training
                                     for verified, punctual doorstep service.
                                 </p>
@@ -792,23 +792,20 @@
 
                         <!-- Member 3 -->
                         <div
-                            class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-kole-green transition-all hover:shadow-md">
-                            <div class="space-y-4">
+                            class="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl hover:border-kole-green transition-all duration-300 flex flex-col group">
+                            <div class="relative w-full aspect-[4/5] overflow-hidden bg-gray-100">
+                                <img src="johnson.jpeg" alt="Adekola Johnson"
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                                 <div
-                                    class="relative w-20 h-20 rounded-2xl overflow-hidden shadow-md border-2 border-emerald-100 group-hover:border-kole-green transition-all">
-                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
-                                        alt="Adekola Johnson"
-                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-kole-green/40 via-transparent to-transparent opacity-80 pointer-events-none">
-                                    </div>
+                                    class="absolute inset-0 bg-gradient-to-t from-kole-green/25 via-transparent to-transparent pointer-events-none">
                                 </div>
+                            </div>
+                            <div class="p-5 sm:p-6 flex flex-col flex-1 justify-between space-y-3 bg-white">
                                 <div>
-                                    <h3 class="text-xl font-bold text-kole-dark">Adekola Johnson</h3>
-                                    <p class="text-xs font-bold uppercase tracking-wider text-kole-green mt-0.5">Head of
-                                        Field Operations</p>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-kole-green">Head of Field Operations</p>
+                                    <h3 class="text-lg sm:text-xl font-bold text-kole-dark tracking-tight mt-1">Adekola Johnson</h3>
                                 </div>
-                                <p class="text-sm text-gray-600 leading-relaxed">
+                                <p class="text-xs text-gray-600 leading-relaxed text-left">
                                     Manages daily waste collection logistics, route optimization, and coordinates
                                     partner driver teams to ensure timely doorstep pickups across all zones.
                                 </p>
@@ -817,23 +814,20 @@
 
                         <!-- Member 4 -->
                         <div
-                            class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-kole-green transition-all hover:shadow-md">
-                            <div class="space-y-4">
+                            class="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl hover:border-kole-green transition-all duration-300 flex flex-col group">
+                            <div class="relative w-full aspect-[4/5] overflow-hidden bg-gray-100">
+                                <img src="Ojay.jpeg" alt="Ojeyemi Kehinde"
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                                 <div
-                                    class="relative w-20 h-20 rounded-2xl overflow-hidden shadow-md border-2 border-emerald-100 group-hover:border-kole-green transition-all">
-                                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=400"
-                                        alt="Ojeyemi Kehinde"
-                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-kole-green/40 via-transparent to-transparent opacity-80 pointer-events-none">
-                                    </div>
+                                    class="absolute inset-0 bg-gradient-to-t from-kole-green/25 via-transparent to-transparent pointer-events-none">
                                 </div>
+                            </div>
+                            <div class="p-5 sm:p-6 flex flex-col flex-1 justify-between space-y-3 bg-white">
                                 <div>
-                                    <h3 class="text-xl font-bold text-kole-dark">Ojeyemi Kehinde</h3>
-                                    <p class="text-xs font-bold uppercase tracking-wider text-kole-green mt-0.5">Head of
-                                        Logistics & Community Growth</p>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-kole-green">Head of Logistics & Community Growth</p>
+                                    <h3 class="text-lg sm:text-xl font-bold text-kole-dark tracking-tight mt-1">Ojeyemi Kehinde</h3>
                                 </div>
-                                <p class="text-sm text-gray-600 leading-relaxed">
+                                <p class="text-xs text-gray-600 leading-relaxed text-left">
                                     Drives grassroots neighborhood awareness, household sign-ups, and commercial
                                     partnerships across key Osogbo zones.
                                 </p>
@@ -842,22 +836,20 @@
 
                         <!-- Member 5 -->
                         <div
-                            class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/80 shadow-sm flex flex-col justify-between group hover:border-kole-green transition-all hover:shadow-md">
-                            <div class="space-y-4">
+                            class="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl hover:border-kole-green transition-all duration-300 flex flex-col group">
+                            <div class="relative w-full aspect-[4/5] overflow-hidden bg-gray-100">
+                                <img src="matthew.jpeg" alt="Awokunle Matthew"
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                                 <div
-                                    class="relative w-20 h-20 rounded-2xl overflow-hidden shadow-md border-2 border-emerald-100 group-hover:border-kole-green transition-all">
-                                    <img src="matthew.jpeg" alt="Awokunle Matthew"
-                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-kole-green/40 via-transparent to-transparent opacity-80 pointer-events-none">
-                                    </div>
+                                    class="absolute inset-0 bg-gradient-to-t from-kole-green/25 via-transparent to-transparent pointer-events-none">
                                 </div>
+                            </div>
+                            <div class="p-5 sm:p-6 flex flex-col flex-1 justify-between space-y-3 bg-white">
                                 <div>
-                                    <h3 class="text-xl font-bold text-kole-dark">Awokunle Matthew</h3>
-                                    <p class="text-xs font-bold uppercase tracking-wider text-kole-green mt-0.5">Head of
-                                        Environmental Compliance</p>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-kole-green">Head of Environmental Compliance</p>
+                                    <h3 class="text-lg sm:text-xl font-bold text-kole-dark tracking-tight mt-1">Awokunle Matthew</h3>
                                 </div>
-                                <p class="text-sm text-gray-600 leading-relaxed">
+                                <p class="text-xs text-gray-600 leading-relaxed text-left">
                                     Ensures strict government-approved dumpsite compliance, eco-friendly transit
                                     regulations, and community health safeguards.
                                 </p>
